@@ -217,27 +217,33 @@ with tab1:
         # AI REPORT
         # ------------------------
 
-        try:
+try:
 
-            with st.spinner(
-            ai_report = "AI test successful"
-            ):
+    ai_report = f"""
+Loan Assessment Summary
 
+Income: ₹{income:,}
+Credit Score: {credit_score}
+EMI: ₹{emi:,}
 
+Decision:
+{decision}
 
-            st.subheader(
-                "🤖 AI Loan Officer Report"
-            )
+Default Probability:
+{default_probability}%
+"""
 
-            st.markdown(
-                ai_report
-            )
+    st.subheader(
+        "🤖 AI Loan Officer Report"
+    )
 
-        except Exception as e:
+    st.markdown(ai_report)
 
-            st.warning(
-                f"Azure OpenAI not configured: {e}"
-            )
+except Exception as e:
+
+    st.warning(
+        f"AI Error: {e}"
+    )
 
         # ------------------------
         # PDF REPORT

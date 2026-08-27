@@ -140,7 +140,7 @@ with tab1:
             emi
         )
 
-     decision = (
+        decision = (
         "APPROVED"
         if risk_score >= 80
         else "MANUAL REVIEW"

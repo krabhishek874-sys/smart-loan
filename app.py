@@ -27,7 +27,7 @@ with t1:
   create_pdf(pdf,report)
   with open(pdf,'rb') as f: st.download_button('Download PDF',f,'loan_report.pdf')
 with t2:
- df=pd.read_csv('data/customers.csv')
+ df=pd.read_csv('customers.csv')
  st.plotly_chart(px.bar(df,x='Customer',y='Income'))
  st.dataframe(df)
 with t3:

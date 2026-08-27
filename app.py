@@ -7,7 +7,7 @@ from loan_engine import calculate_risk
 from ml_model import predict_default
 from chat_assistant import loan_advisor
 from pdf_generator import create_pdf
-
+st.write("APP STARTED")
 # ----------------------------
 # PAGE CONFIG
 # ----------------------------
@@ -60,7 +60,7 @@ if not st.session_state.logged:
             )
 
     st.stop()
-
+st.write("LOGIN SUCCESS")
 # ----------------------------
 # HEADER
 # ----------------------------
@@ -72,7 +72,7 @@ st.title(
 st.caption(
     "AI-Powered Banking Risk Assessment Platform"
 )
-
+st.write("BUILDING TABS")
 # ----------------------------
 # TABS
 # ----------------------------
@@ -140,13 +140,13 @@ with tab1:
             emi
         )
 
-        decision = (
-            "APPROVED"
-            if risk_score >= 80
-            else "MANUAL REVIEW"
-            if risk_score >= 60
-            else "REJECTED"
-        )
+decision = (
+    "APPROVED"
+    if risk_score >= 80
+    else "MANUAL REVIEW"
+    if risk_score >= 60
+    else "REJECTED"
+)
 
         # ------------------------
         # ML Prediction
@@ -223,19 +223,7 @@ with tab1:
                 "Generating AI Assessment..."
             ):
 
-                ai_report = loan_advisor(
-                    income,
-                    credit_score,
-                    emi,
-                    """
-                    Generate:
-
-                    1. Executive Summary
-                    2. Risk Analysis
-                    3. Recommendation
-                    4. Final Decision
-                    """
-                )
+ai_report = "AI test successful"
 
             st.subheader(
                 "🤖 AI Loan Officer Report"

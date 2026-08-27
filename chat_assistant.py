@@ -4,6 +4,7 @@ def loan_advisor(
     emi,
     question
 ):
+
     dti = (emi / income) * 100
 
     if credit_score >= 750 and dti < 30:
@@ -19,9 +20,9 @@ Reasoning:
 • Good repayment capacity
 
 Suggested Actions:
-• Proceed with approval.
-• Verify supporting documents.
-• Offer preferential interest rates.
+• Proceed with approval
+• Verify supporting documents
+• Offer competitive interest rates
 """
 
     elif credit_score >= 700 and dti < 40:
@@ -37,10 +38,10 @@ Reasoning:
 • Additional assessment recommended
 
 Suggested Actions:
-• Review bank statements.
-• Verify employment stability.
-• Evaluate requested loan amount.
-• Consider adjusted loan tenure.
+• Review bank statements
+• Verify employment stability
+• Evaluate requested loan amount
+• Consider adjusted loan tenure
 """
 
     else:
@@ -51,34 +52,35 @@ Suggested Actions:
 Decision: {decision}
 
 Reasoning:
-• Elevated lending risk.
-• Credit score ({credit_score}) is below preferred threshold or debt obligations are high.
-• Debt-to-income ratio is {dti:.1f}%.
+• Elevated lending risk
+• Credit score ({credit_score}) or affordability does not meet preferred criteria
+• Debt-to-income ratio is {dti:.1f}%
 
 Suggested Actions:
-• Improve credit score.
-• Reduce existing EMI obligations.
-• Increase down payment contribution.
-• Reapply after improving financial profile.
+• Improve credit score
+• Reduce existing EMI obligations
+• Lower requested loan amount
+• Reapply after improving financial profile
 """
 
-    return recommendation
+    question = question.lower()
 
-if "why" in question.lower():
+    if "improve" in question:
 
-    return recommendation
-
-elif "improve" in question.lower():
-
-    return """
+        return """
 Ways to improve approval chances:
 
-• Reduce existing EMI commitments.
-• Increase monthly income.
-• Improve credit score above 750.
-• Reduce requested loan amount.
+• Reduce existing EMI commitments
+• Increase monthly income
+• Improve credit score above 750
+• Reduce requested loan amount
+• Maintain consistent repayment history
 """
 
-else:
+    elif "why" in question:
 
-    return recommendation
+        return recommendation
+
+    else:
+
+        return recommendation

@@ -220,7 +220,7 @@ with tab1:
         try:
 
             with st.spinner(
-                ai_report = "AI test successful"
+            ai_report = "AI test successful"
             ):
 
 

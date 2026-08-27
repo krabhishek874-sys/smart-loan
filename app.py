@@ -23,7 +23,7 @@ with t1:
   st.metric('Risk Score',score)
   st.metric('Default Risk %',default)
   report=f'Risk Score:{score} Default:{default}%'
-  pdf='/mnt/data/loan_report.pdf'
+  pdf='loan_report.pdf'
   create_pdf(pdf,report)
   with open(pdf,'rb') as f: st.download_button('Download PDF',f,'loan_report.pdf')
 with t2:

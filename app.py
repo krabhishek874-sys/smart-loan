@@ -140,13 +140,13 @@ with tab1:
             emi
         )
 
-decision = (
-    "APPROVED"
-    if risk_score >= 80
-    else "MANUAL REVIEW"
-    if risk_score >= 60
-    else "REJECTED"
-)
+     decision = (
+        "APPROVED"
+        if risk_score >= 80
+        else "MANUAL REVIEW"
+        if risk_score >= 60
+        else "REJECTED"
+        )
 
         # ------------------------
         # ML Prediction

@@ -220,10 +220,10 @@ with tab1:
         try:
 
             with st.spinner(
-                "Generating AI Assessment..."
+                ai_report = "AI test successful"
             ):
 
-ai_report = "AI test successful"
+
 
             st.subheader(
                 "🤖 AI Loan Officer Report"

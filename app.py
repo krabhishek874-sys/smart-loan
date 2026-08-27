@@ -317,7 +317,7 @@ with tab2:
     try:
 
         df = pd.read_csv(
-            "data/customers.csv"
+            "customers.csv"
         )
 
         m1, m2, m3 = st.columns(3)

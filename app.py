@@ -217,33 +217,33 @@ with tab1:
         # AI REPORT
         # ------------------------
 
-try:
+        try:
 
-    ai_report = f"""
-Loan Assessment Summary
+          ai_report = f"""
+         Loan Assessment Summary
 
-Income: ₹{income:,}
-Credit Score: {credit_score}
-EMI: ₹{emi:,}
+         Income: ₹{income:,}
+         Credit Score: {credit_score}
+         EMI: ₹{emi:,}
 
-Decision:
-{decision}
+         Decision:
+         {decision}
 
-Default Probability:
-{default_probability}%
+         Default Probability:
+         {default_probability}%
 """
 
-    st.subheader(
-        "🤖 AI Loan Officer Report"
-    )
+         st.subheader(
+           "🤖 AI Loan Officer Report"
+         )
 
-    st.markdown(ai_report)
+         st.markdown(ai_report)
 
-except Exception as e:
+         except Exception as e:
 
-    st.warning(
-        f"AI Error: {e}"
-    )
+         st.warning(
+            f"AI Error: {e}"
+         )
 
         # ------------------------
         # PDF REPORT
@@ -252,25 +252,25 @@ except Exception as e:
         try:
 
             report_text = f"""
-Loan Assessment
+            Loan Assessment
 
-Income: {income}
+            Income: {income}
 
-Credit Score: {credit_score}
+            Credit Score: {credit_score}
 
-Existing EMI: {emi}
+            Existing EMI: {emi}
 
-Requested Loan:
-{requested_loan}
+            Requested Loan:
+            {requested_loan}
 
-Risk Score:
-{risk_score}
+             Risk Score:
+             {risk_score}
 
-Decision:
-{decision}
+             Decision:
+             {decision}
 
-Default Probability:
-{default_probability}%
+             Default Probability:
+             {default_probability}%
 """
 
             pdf_file = "loan_report.pdf"
